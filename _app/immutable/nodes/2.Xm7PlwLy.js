@@ -1,0 +1,1 @@
+import"../chunks/DsnmJJEf.js";import"../chunks/D44NmenO.js";import{l as e,m as n,n as r}from"../chunks/WX7CObTu.js";var a=e('<h1>Hello, world!</h1> <p>Welcome to this cool website</p> <br/> <div class="buttons svelte-1uha8ag"><button>Hello</button> <button>World</button></div>',1);function s(o){var t=a();r(6),n(o,t)}export{s as component};
