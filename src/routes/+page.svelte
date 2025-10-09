@@ -1,10 +1,14 @@
-<h1>Hello, world!</h1>
-<p>Welcome to this cool website</p>
+<script>
+    import { resolve } from "$app/paths";
+</script>
+
+<h1>vlOd's website</h1>
+<p>Welcome to my website! :)</p>
+<p>Here you can find stuff about me and my projects</p>
 <br />
 
 <div class="buttons">
-    <button>Hello</button>
-    <button>World</button>
+    <a href={resolve("/about")} class="button">About me</a>
 </div>
 
 <style>
@@ -12,6 +16,6 @@
         display: flex;
         flex-direction: row;
         justify-content: center;
-        gap: 25px;
+        gap: 10px;
     }
 </style>
