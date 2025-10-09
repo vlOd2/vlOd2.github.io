@@ -43,7 +43,7 @@ body {
 }
 
 @keyframes bodyBG {
-    0% {
+    20% {
         --bg-first-opacity: 35%;
         --bg-first-x: 50%;
         --bg-first-y: 75%;
@@ -53,12 +53,13 @@ body {
         --bg-second-y: 68%;
     }
 
-    50% {
+    60% {
         --bg-first-x: 0%;
         --bg-first-y: 45%;
     }
 
-    100% {
+    0%,
+    80% {
         --bg-first-opacity: 50%;
         --bg-first-x: 100%;
         --bg-first-y: 0%;
@@ -73,15 +74,15 @@ body {
     width: 100vw;
     height: 100vh;
     margin: 0;
-    animation-name: bodyBG;
+
     background:
         radial-gradient(circle at var(--bg-first-x) var(--bg-first-y), rgb(40, 22, 49) 0, transparent var(--bg-first-opacity)),
         radial-gradient(circle at var(--bg-second-x) var(--bg-second-y), rgb(18, 0, 27) 0, rgb(0, 0, 0) var(--bg-second-opacity));
-    box-shadow: inset 0px 0px 1000px 20vmax rgba(76, 0, 255, 0.01);
+    box-shadow: inset 0px 0px 1000px 26vw rgba(76, 0, 255, 0.01);
 
     animation-name: bodyBG;
-    animation-duration: 10s;
-    animation-delay: 5s;
+    animation-duration: 15s;
+    animation-delay: 500ms;
     animation-direction: alternate;
     animation-iteration-count: infinite;
     animation-timing-function: cubic-bezier(0.175, 0.885, 0.32, 1.275);
@@ -94,7 +95,6 @@ body {
     align-items: center;
     flex-direction: column;
     background: rgba(255, 255, 255, 0.01);
-    backdrop-filter: blur(25px);
 }
 
 .content-container {
@@ -121,7 +121,8 @@ body {
     border-radius: 15px;
 
     background-color: rgba(74, 7, 100, 0.048);
-    box-shadow: 0px 0px 300px 2px rgba(109, 47, 181, 0.12);
+    backdrop-filter: blur(10px);
+    box-shadow: 0px 0px 1000px 6px rgba(109, 47, 181, 0.12);
 }
 
 @keyframes errorIconGlow {
@@ -138,4 +139,22 @@ body {
     color: lightcoral;
     font-size: 2em;
     animation: errorIconGlow 2s forwards;
+}
+
+.cursor-glow {
+    --mouse-x: -9999;
+    --mouse-y: -9999;
+    position: absolute;
+    x: 0;
+    y: 0;
+    /* width: 25px;
+    height: 25px;
+    background-color: magenta; */
+    transition: all 100ms linear;
+    transform: translate(calc(var(--mouse-x) * 1px - 50%), calc(var(--mouse-y) * 1px - 50%));
+    box-shadow: 0px 0px 50px 12.5px rgba(240, 248, 255, 0.514);
+}
+
+.cursor-glow.active {
+    box-shadow: 0px 0px 50px 15px rgb(240, 248, 255);
 }
