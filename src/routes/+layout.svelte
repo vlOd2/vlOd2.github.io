@@ -7,6 +7,10 @@
     let { children } = $props();
 </script>
 
+<svelte:head>
+    <title>vlOd's website</title>
+</svelte:head>
+
 <div class="body-flex">
     <Navbar />
 

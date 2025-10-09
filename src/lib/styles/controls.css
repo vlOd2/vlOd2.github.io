@@ -6,9 +6,6 @@ button,
     border-radius: 16px;
     background: rgba(255, 255, 255, 0.05);
     backdrop-filter: blur(100px);
-    -webkit-backdrop-filter: blur(100px);
-    -webkit-box-shadow: 0px 0px 161px 6px rgba(38, 16, 204, 0.38);
-    -moz-box-shadow: 0px 0px 161px 6px rgba(38, 16, 204, 0.38);
     box-shadow: 0px 0px 161px 6px rgba(38, 16, 204, 0.38);
     transition: all 0.5s ease;
     cursor: pointer;
@@ -24,15 +21,11 @@ button:hover,
         0 0 20px rgb(38, 1, 172),
         0 0 30px rgb(38, 1, 172),
         0 0 75px rgb(38, 1, 172);
-    -webkit-box-shadow: 0px 0px 161px 6px rgba(38, 16, 204, 0.8);
-    -moz-box-shadow: 0px 0px 161px 6px rgba(38, 16, 204, 0.8);
     box-shadow: 0px 0px 161px 6px rgba(38, 16, 204, 0.8);
 }
 
 button:active,
 .button:active {
     background: rgba(255, 255, 255, 0.25);
-    -webkit-box-shadow: 0px 0px 161px 6px rgba(38, 16, 204, 1);
-    -moz-box-shadow: 0px 0px 161px 6px rgba(38, 16, 204, 1);
     box-shadow: 0px 0px 161px 6px rgba(38, 16, 204, 1);
 }

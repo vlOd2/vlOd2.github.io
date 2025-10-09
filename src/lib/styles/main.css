@@ -6,13 +6,85 @@ body {
     color: whitesmoke;
 }
 
+@property --bg-first-opacity {
+    syntax: "<percentage>";
+    inherits: false;
+    initial-value: 50%;
+}
+
+@property --bg-first-x {
+    syntax: "<percentage>";
+    inherits: false;
+    initial-value: 100%;
+}
+
+@property --bg-first-y {
+    syntax: "<percentage>";
+    inherits: false;
+    initial-value: 0%;
+}
+
+@property --bg-second-opacity {
+    syntax: "<percentage>";
+    inherits: false;
+    initial-value: 50%;
+}
+
+@property --bg-second-x {
+    syntax: "<percentage>";
+    inherits: false;
+    initial-value: 50%;
+}
+
+@property --bg-second-y {
+    syntax: "<percentage>";
+    inherits: false;
+    initial-value: 100%;
+}
+
+@keyframes bodyBG {
+    0% {
+        --bg-first-opacity: 35%;
+        --bg-first-x: 50%;
+        --bg-first-y: 75%;
+
+        --bg-second-opacity: 75%;
+        --bg-second-x: 85%;
+        --bg-second-y: 68%;
+    }
+
+    50% {
+        --bg-first-x: 0%;
+        --bg-first-y: 45%;
+    }
+
+    100% {
+        --bg-first-opacity: 50%;
+        --bg-first-x: 100%;
+        --bg-first-y: 0%;
+
+        --bg-second-opacity: 50%;
+        --bg-second-x: 50%;
+        --bg-second-y: 100%;
+    }
+}
+
 body {
     width: 100vw;
     height: 100vh;
     margin: 0;
+    animation-name: bodyBG;
     background:
-        radial-gradient(circle at top right, rgb(40, 22, 49) 0, transparent 50%),
-        radial-gradient(circle at center bottom, rgb(18, 0, 27) 0, rgb(0, 0, 0) 50%);
+        radial-gradient(circle at var(--bg-first-x) var(--bg-first-y), rgb(40, 22, 49) 0, transparent var(--bg-first-opacity)),
+        radial-gradient(circle at var(--bg-second-x) var(--bg-second-y), rgb(18, 0, 27) 0, rgb(0, 0, 0) var(--bg-second-opacity));
+    box-shadow: inset 0px 0px 1000px 20vmax rgba(76, 0, 255, 0.01);
+
+    animation-name: bodyBG;
+    animation-duration: 10s;
+    animation-delay: 5s;
+    animation-direction: alternate;
+    animation-iteration-count: infinite;
+    animation-timing-function: cubic-bezier(0.175, 0.885, 0.32, 1.275);
 }
 
 .body-flex {
@@ -21,15 +93,17 @@ body {
     display: flex;
     align-items: center;
     flex-direction: column;
+    background: rgba(255, 255, 255, 0.01);
+    backdrop-filter: blur(25px);
 }
 
 .content-container {
     flex-grow: 1;
+    width: 100vw;
     display: flex;
     justify-content: center;
     align-items: center;
     text-align: center;
-    width: 100vw;
     overflow-y: hidden;
 }
 
@@ -43,12 +117,10 @@ body {
     scrollbar-width: thin;
 
     padding: 5em 10em;
-    background-color: rgba(74, 7, 100, 0.048);
     border: 2px solid #1d1f22;
     border-radius: 15px;
 
-    -webkit-box-shadow: 0px 0px 300px 2px rgba(109, 47, 181, 0.12);
-    -moz-box-shadow: 0px 0px 300px 2px rgba(109, 47, 181, 0.12);
+    background-color: rgba(74, 7, 100, 0.048);
     box-shadow: 0px 0px 300px 2px rgba(109, 47, 181, 0.12);
 }
 
@@ -65,5 +137,5 @@ body {
 .error-icon {
     color: lightcoral;
     font-size: 2em;
-    animation: errorIconGlow 500ms forwards;
+    animation: errorIconGlow 2s forwards;
 }

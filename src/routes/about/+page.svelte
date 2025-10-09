@@ -1,4 +1,4 @@
-<h1>About me</h1>
+<h1 style="margin: 0;">About me</h1>
 
 <br />
 
