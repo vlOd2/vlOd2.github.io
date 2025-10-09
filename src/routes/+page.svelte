@@ -5,9 +5,11 @@
 <h1>vlOd's website</h1>
 <p>Welcome to my website! :)</p>
 <p>Here you can find stuff about me and my projects</p>
+<p>NOTE: This website is still very much under construction</p>
 <br />
 
 <div class="buttons">
+    <a href={resolve("/projects")} class="button">My projects</a>
     <a href={resolve("/about")} class="button">About me</a>
 </div>
 
