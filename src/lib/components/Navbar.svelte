@@ -22,7 +22,7 @@
         position: relative;
         width: 100vw;
         padding: 15px 0;
-        box-shadow: 0px 0px 173px 62px rgba(127, 86, 173, 0.2);
+        box-shadow: 0px 0px 173px 62px rgba(127, 86, 173, 0.35);
         transition: all 250ms;
     }
 
