@@ -16,18 +16,14 @@
 
 <style>
     nav {
-        position: relative;
-        width: 100vw;
-        padding: 15px 0;
         display: flex;
         justify-content: center;
         align-items: center;
+        position: relative;
+        width: 100vw;
+        padding: 15px 0;
         box-shadow: 0px 0px 173px 62px rgba(127, 86, 173, 0.2);
-    }
-
-    .nav-title {
-        position: absolute;
-        left: 15px;
+        transition: all 250ms;
     }
 
     .nav-list {
@@ -38,25 +34,46 @@
         padding: 0;
     }
 
+    @media (min-width: 690px) {
+        .nav-title {
+            position: absolute;
+            left: 15px;
+        }
+    }
+
+    @media (max-width: 690px) {
+        nav {
+            flex-direction: column;
+            gap: 7px;
+            padding: 5px 0px;
+        }
+
+        .nav-list {
+            gap: 15px;
+        }
+    }
+
     .nav-link {
         color: whitesmoke;
         text-decoration: none;
     }
 
     .nav-item {
-        transition: all 0.5s ease;
+        transition: all 500ms;
     }
 
-    .nav-item:hover {
-        color: aliceblue;
-        text-shadow:
-            0 0 5px aliceblue,
-            0 0 10px aliceblue,
-            0 0 15px aliceblue,
-            0 0 20px rgb(38, 1, 172),
-            0 0 30px rgb(38, 1, 172),
-            0 0 40px rgb(38, 1, 172),
-            0 0 55px rgb(38, 1, 172),
-            0 0 75px rgb(38, 1, 172);
+    @media (any-hover) {
+        .nav-item:hover {
+            color: aliceblue;
+            text-shadow:
+                0 0 5px aliceblue,
+                0 0 10px aliceblue,
+                0 0 15px aliceblue,
+                0 0 20px rgb(38, 1, 172),
+                0 0 30px rgb(38, 1, 172),
+                0 0 40px rgb(38, 1, 172),
+                0 0 55px rgb(38, 1, 172),
+                0 0 75px rgb(38, 1, 172);
+        }
     }
 </style>
