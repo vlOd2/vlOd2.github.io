@@ -1,8 +1,9 @@
 <script>
     import { resolve } from "$app/paths";
+    import PageTitle from "$lib/components/PageTitle.svelte";
 </script>
 
-<h1 class="page-title">My projects</h1>
+<PageTitle>My projects</PageTitle>
 
 <div class="projects">
     <ul style="margin-bottom: 25px;">

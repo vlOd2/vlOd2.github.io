@@ -1,4 +1,8 @@
-<h1 class="page-title">Socials</h1>
+<script>
+    import PageTitle from "$lib/components/PageTitle.svelte";
+</script>
+
+<PageTitle>Socials</PageTitle>
 
 <br />
 

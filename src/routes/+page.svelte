@@ -1,11 +1,14 @@
 <script>
     import { resolve } from "$app/paths";
+    import PageTitle from "$lib/components/PageTitle.svelte";
 </script>
 
-<h1 class="page-title">vlOd's website</h1>
+<PageTitle>vlOd's website</PageTitle>
+
 <p>Welcome to my website! :)</p>
 <p>Here you can find stuff about me and my projects</p>
 <p>NOTE: This website is still very much under construction</p>
+
 <br />
 
 <div class="buttons">

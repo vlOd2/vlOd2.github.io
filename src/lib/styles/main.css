@@ -45,8 +45,3 @@ body {
     overflow-y: hidden;
     transition: all 250ms;
 }
-
-.page-title {
-    margin: 0;
-    font-size: 2.1em;
-}
