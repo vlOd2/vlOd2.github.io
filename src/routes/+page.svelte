@@ -2,7 +2,7 @@
     import { resolve } from "$app/paths";
 </script>
 
-<h1>vlOd's website</h1>
+<h1 class="page-title">vlOd's website</h1>
 <p>Welcome to my website! :)</p>
 <p>Here you can find stuff about me and my projects</p>
 <p>NOTE: This website is still very much under construction</p>

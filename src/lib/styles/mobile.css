@@ -12,6 +12,7 @@
     .content-container {
         height: 95%;
         overflow: auto;
+        margin-bottom: 10px;
     }
 
     .content {

@@ -26,12 +26,26 @@
         transition: all 250ms;
     }
 
+    .nav-title {
+        font-size: 0.8em;
+        color: #d5dadd;
+    }
+
     .nav-list {
         display: flex;
         list-style-type: none;
         gap: 20px;
         margin: 0;
         padding: 0;
+    }
+
+    .nav-link {
+        color: whitesmoke;
+        text-decoration: none;
+    }
+
+    .nav-item {
+        transition: all 500ms;
     }
 
     @media (min-width: 690px) {
@@ -45,21 +59,12 @@
         nav {
             flex-direction: column;
             gap: 7px;
-            padding: 5px 0px;
+            padding: 6.5px 0px;
         }
 
         .nav-list {
             gap: 15px;
         }
-    }
-
-    .nav-link {
-        color: whitesmoke;
-        text-decoration: none;
-    }
-
-    .nav-item {
-        transition: all 500ms;
     }
 
     @media (any-hover) {

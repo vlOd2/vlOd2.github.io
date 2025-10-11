@@ -2,7 +2,7 @@
     import { resolve } from "$app/paths";
 </script>
 
-<h1>My projects</h1>
+<h1 class="page-title">My projects</h1>
 
 <div class="projects">
     <ul style="margin-bottom: 25px;">

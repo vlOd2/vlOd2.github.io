@@ -1,4 +1,4 @@
-<h1>Socials</h1>
+<h1 class="page-title">Socials</h1>
 
 <br />
 

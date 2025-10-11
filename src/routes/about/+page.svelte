@@ -1,4 +1,4 @@
-<h1 style="margin: 0;">About me</h1>
+<h1 class="page-title"><strong>About me</strong></h1>
 
 <br />
 
