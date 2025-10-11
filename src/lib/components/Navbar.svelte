@@ -34,7 +34,7 @@
     .nav-list {
         display: flex;
         list-style-type: none;
-        gap: 20px;
+        gap: 3em;
         margin: 0;
         padding: 0;
     }
@@ -63,7 +63,7 @@
         }
 
         .nav-list {
-            gap: 15px;
+            gap: 1em;
         }
     }
 
