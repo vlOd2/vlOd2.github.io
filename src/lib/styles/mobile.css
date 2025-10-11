@@ -1,0 +1,24 @@
+@media (max-width: 1000px) {
+    body {
+        height: unset;
+        min-height: 100vh;
+    }
+
+    .body-flex {
+        height: unset;
+        min-height: 100vh;
+    }
+
+    .content-container {
+        height: 95%;
+        overflow: auto;
+    }
+
+    .content {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        margin: 0px 10px;
+    }
+}

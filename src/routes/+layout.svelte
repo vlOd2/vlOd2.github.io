@@ -1,6 +1,9 @@
 <script lang="ts">
-    import "$lib/styles/main.css";
     import "$lib/styles/controls.css";
+    import "$lib/styles/main-bg.css";
+    import "$lib/styles/main.css";
+    import "$lib/styles/desktop.css";
+    import "$lib/styles/mobile.css";
     import Navbar from "$lib/components/Navbar.svelte";
     import { page } from "$app/state";
     import { blur } from "svelte/transition";

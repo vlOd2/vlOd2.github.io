@@ -1,0 +1,63 @@
+@property --bg-first-opacity {
+    syntax: "<percentage>";
+    inherits: false;
+    initial-value: 50%;
+}
+
+@property --bg-first-x {
+    syntax: "<percentage>";
+    inherits: false;
+    initial-value: 100%;
+}
+
+@property --bg-first-y {
+    syntax: "<percentage>";
+    inherits: false;
+    initial-value: 0%;
+}
+
+@property --bg-second-opacity {
+    syntax: "<percentage>";
+    inherits: false;
+    initial-value: 50%;
+}
+
+@property --bg-second-x {
+    syntax: "<percentage>";
+    inherits: false;
+    initial-value: 50%;
+}
+
+@property --bg-second-y {
+    syntax: "<percentage>";
+    inherits: false;
+    initial-value: 100%;
+}
+
+@keyframes bodyBG {
+    20% {
+        --bg-first-opacity: 35%;
+        --bg-first-x: 50%;
+        --bg-first-y: 75%;
+
+        --bg-second-opacity: 75%;
+        --bg-second-x: 85%;
+        --bg-second-y: 68%;
+    }
+
+    60% {
+        --bg-first-x: 0%;
+        --bg-first-y: 45%;
+    }
+
+    0%,
+    80% {
+        --bg-first-opacity: 50%;
+        --bg-first-x: 100%;
+        --bg-first-y: 0%;
+
+        --bg-second-opacity: 50%;
+        --bg-second-x: 50%;
+        --bg-second-y: 100%;
+    }
+}
