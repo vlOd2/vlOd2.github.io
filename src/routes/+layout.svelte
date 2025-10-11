@@ -6,19 +6,17 @@
     import { blur } from "svelte/transition";
 
     let { children } = $props();
-    let cursorGlow: HTMLDivElement;
+    let content = $state<HTMLDivElement>();
 
     function onmousemove(e: MouseEvent) {
-        cursorGlow.style.setProperty("--mouse-y", e.clientY.toFixed(2));
-        cursorGlow.style.setProperty("--mouse-x", e.clientX.toFixed(2));
-    }
-
-    function onmousedown(e: MouseEvent) {
-        cursorGlow.classList.add("active");
-    }
-
-    function onmouseup(e: MouseEvent) {
-        cursorGlow.classList.remove("active");
+        if (!content) {
+            return;
+        }
+        const rect = content.getBoundingClientRect();
+        const x = e.clientX - rect.left;
+        const y = e.clientY - rect.top;
+        content.style.setProperty("--mouse-x", `${x}px`);
+        content.style.setProperty("--mouse-y", `${y}px`);
     }
 </script>
 
@@ -26,15 +24,12 @@
     <title>vlOd's website</title>
 </svelte:head>
 
-<svelte:document {onmousemove} {onmousedown} {onmouseup} />
-<div class="cursor-glow" bind:this={cursorGlow}></div>
-
 <div class="body-flex">
     <Navbar />
 
-    <div class="content-container">
+    <div class="content-container" {onmousemove}>
         {#key page.route.id}
-            <div class="content" in:blur>
+            <div class="content" bind:this={content} in:blur>
                 {@render children?.()}
             </div>
         {/key}

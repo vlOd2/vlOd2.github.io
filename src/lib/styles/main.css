@@ -94,7 +94,7 @@ body {
     display: flex;
     align-items: center;
     flex-direction: column;
-    background: rgba(255, 255, 255, 0.01);
+    background-color: rgba(255, 255, 255, 0.01);
 }
 
 .content-container {
@@ -107,7 +107,27 @@ body {
     overflow-y: hidden;
 }
 
+/* Glow hover effect */
+.content::before {
+    content: "";
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    height: 100%;
+    border-radius: inherit;
+    pointer-events: none;
+    opacity: 0;
+    background: radial-gradient(600px circle at var(--mouse-x) var(--mouse-y), rgba(134, 111, 170, 0.15), transparent 50%);
+    transition: all 500ms ease-out;
+}
+
+.content:hover::before {
+    opacity: 1;
+}
+
 .content {
+    position: relative;
     width: max-content;
     max-height: 50%;
     margin-bottom: 10px;
@@ -139,22 +159,4 @@ body {
     color: lightcoral;
     font-size: 2em;
     animation: errorIconGlow 2s forwards;
-}
-
-.cursor-glow {
-    --mouse-x: -9999;
-    --mouse-y: -9999;
-    position: absolute;
-    x: 0;
-    y: 0;
-    /* width: 25px;
-    height: 25px;
-    background-color: magenta; */
-    transition: all 100ms linear;
-    transform: translate(calc(var(--mouse-x) * 1px - 50%), calc(var(--mouse-y) * 1px - 50%));
-    box-shadow: 0px 0px 50px 12.5px rgba(240, 248, 255, 0.514);
-}
-
-.cursor-glow.active {
-    box-shadow: 0px 0px 50px 15px rgb(240, 248, 255);
 }
