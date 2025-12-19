@@ -9,7 +9,7 @@
         <li class="nav-item"><a href={resolve("/projects")} class="nav-link">Projects</a></li>
         <li class="nav-item"><a href={resolve("/blog")} class="nav-link">Blog</a></li>
         <li class="nav-item"><a href={resolve("/socials")} class="nav-link">Socials</a></li>
-        <li class="nav-item"><a href="https://files.vlod.me/" class="nav-link" target="_blank">Files</a></li>
+        <li class="nav-item"><a href="https://files.vlod.site/" class="nav-link" target="_blank">Files</a></li>
         <li class="nav-item"><a href={resolve("/about")} class="nav-link">About</a></li>
     </ul>
 </nav>
