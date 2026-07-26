@@ -3,19 +3,36 @@ body {
     font-family: "Switzer", sans-serif;
     background-color: black;
     color: whitesmoke;
-    overflow-x: hidden;
+    overflow: hidden;
     scrollbar-color: whitesmoke transparent;
     scrollbar-width: thin;
 }
 
+@media (min-width: 1000px) {
+    html,
+    body {
+        font-size: 1.1em;
+    }
+}
+
 body {
+    display: flex;
+
     width: 100vw;
-    height: 100vh;
+    height: 100dvh;
     margin: 0;
 
     background:
-        radial-gradient(circle at var(--bg-first-x) var(--bg-first-y), rgb(40, 22, 49) 0, transparent var(--bg-first-opacity)),
-        radial-gradient(circle at var(--bg-second-x) var(--bg-second-y), rgb(18, 0, 27) 0, rgb(0, 0, 0) var(--bg-second-opacity));
+        radial-gradient(
+            circle at var(--bg-first-x) var(--bg-first-y),
+            rgb(40, 22, 49) 0,
+            transparent var(--bg-first-opacity)
+        ),
+        radial-gradient(
+            circle at var(--bg-second-x) var(--bg-second-y),
+            rgb(18, 0, 27) 0,
+            rgb(0, 0, 0) var(--bg-second-opacity)
+        );
     box-shadow: inset 0px 0px 1000px 26vw rgba(76, 0, 255, 0.01);
 
     animation-name: bodyBG;
@@ -27,21 +44,33 @@ body {
 }
 
 .body-flex {
-    width: 100vw;
-    height: 100vh;
     display: flex;
-    align-items: center;
     flex-direction: column;
+    flex-grow: 1;
+    min-height: 0;
     background-color: rgba(255, 255, 255, 0.01);
+    /* background-color: blue; */
 }
 
 .content-container {
-    flex-grow: 1;
-    width: 100vw;
     display: flex;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    overflow-y: hidden;
+
+    flex-grow: 1;
+    min-height: 0;
+    position: relative;
+    overflow-y: auto;
+
     transition: all 250ms;
+    /* background-color: red; */
+}
+
+.content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    margin: auto;
+    padding: 20px 30px;
+    /* background-color: purple; */
 }

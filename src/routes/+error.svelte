@@ -1,9 +1,12 @@
 <script lang="ts">
     import { page } from "$app/state";
+    import { TriangleAlert } from "@lucide/svelte";
 </script>
 
-<i class="fa-solid fa-triangle-exclamation error-icon"></i>
+<TriangleAlert class="error-icon" />
+
 <h2>{page.status} - Error</h2>
+
 {#if page.status == 404}
     <p>The specified page could not be found</p>
 {:else}

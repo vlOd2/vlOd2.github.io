@@ -3,14 +3,11 @@
 </script>
 
 <nav>
-    <span class="nav-title">vlOd's website</span>
-    <ul class="nav-list">
-        <li class="nav-item"><a href={resolve("/")} class="nav-link">Home</a></li>
-        <li class="nav-item"><a href={resolve("/projects")} class="nav-link">Projects</a></li>
-        <li class="nav-item"><a href={resolve("/blog")} class="nav-link">Blog</a></li>
-        <li class="nav-item"><a href={resolve("/socials")} class="nav-link">Socials</a></li>
-        <li class="nav-item"><a href="https://files.vlod.site/" class="nav-link" target="_blank">Files</a></li>
-        <li class="nav-item"><a href={resolve("/about")} class="nav-link">About</a></li>
+    <span class="title">vlOd's website</span>
+    <ul>
+        <li><a href={resolve("/")}>Home</a></li>
+        <li><a href={resolve("/blog")}>Blog</a></li>
+        <li><a href={resolve("/socials")}>Socials</a></li>
     </ul>
 </nav>
 
@@ -24,14 +21,17 @@
         padding: 15px 0;
         box-shadow: 0px 0px 173px 62px rgba(127, 86, 173, 0.35);
         transition: all 250ms;
+        user-select: none;
     }
 
-    .nav-title {
+    .title {
+        position: absolute;
+        left: 15px;
         font-size: 0.8em;
         color: #d5dadd;
     }
 
-    .nav-list {
+    ul {
         display: flex;
         list-style-type: none;
         gap: 3em;
@@ -39,36 +39,35 @@
         padding: 0;
     }
 
-    .nav-link {
+    li {
+        transition: all 500ms;
+    }
+
+    a {
         color: whitesmoke;
         text-decoration: none;
     }
 
-    .nav-item {
-        transition: all 500ms;
-    }
-
-    @media (min-width: 690px) {
-        .nav-title {
-            position: absolute;
-            left: 15px;
-        }
-    }
-
     @media (max-width: 690px) {
         nav {
-            flex-direction: column;
-            gap: 7px;
             padding: 6.5px 0px;
         }
 
-        .nav-list {
-            gap: 1em;
+        .title {
+            display: none;
+        }
+
+        ul {
+            gap: 1.5em;
+        }
+
+        li {
+            padding: 1em 0;
         }
     }
 
     @media (any-hover) {
-        .nav-item:hover {
+        li:hover {
             color: aliceblue;
             text-shadow:
                 0 0 5px aliceblue,

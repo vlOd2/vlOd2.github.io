@@ -11,12 +11,19 @@ button,
     cursor: pointer;
     text-decoration: none;
     user-select: none;
+    font-size: 1em;
+}
+
+button:disabled,
+.button:disabled {
+    color: rgb(159, 159, 159);
+    background: rgba(255, 255, 255, 0.01);
+    cursor: not-allowed;
 }
 
 @media (any-hover) {
-
-    button:hover,
-    .button:hover {
+    button:not([disabled]):hover,
+    .button:not([disabled]):hover {
         color: aliceblue;
         background: rgba(255, 255, 255, 0.1);
         text-shadow:
@@ -27,26 +34,26 @@ button,
         box-shadow: 0px 0px 161px 6px rgba(38, 16, 204, 0.8);
     }
 
-    button:active,
-    .button:active {
+    button:not([disabled]):active,
+    .button:not([disabled]):active {
         background: rgba(255, 255, 255, 0.25);
         box-shadow: 0px 0px 161px 6px rgba(38, 16, 204, 1);
     }
-
 }
 
 @keyframes errorIconGlow {
     to {
-        text-shadow:
-            0 0 5px black,
-            0 0 20px red,
-            0 0 30px red,
-            0 0 75px red;
+        filter: drop-shadow(0 0 5px black) drop-shadow(0 0 20px red) drop-shadow(0 0 30px red) drop-shadow(0 0 75px red);
     }
 }
 
 .error-icon {
     color: lightcoral;
-    font-size: 2em;
+    width: 2em;
+    height: 2em;
     animation: errorIconGlow 2s forwards;
+}
+
+p {
+    margin: 0.25em;
 }

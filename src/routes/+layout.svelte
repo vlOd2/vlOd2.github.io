@@ -1,38 +1,39 @@
 <script lang="ts">
     import "$lib/styles/controls.css";
-    import "$lib/styles/main-bg.css";
+    import "$lib/styles/glow.css";
     import "$lib/styles/main.css";
-    import "$lib/styles/desktop.css";
-    import "$lib/styles/mobile.css";
     import Navbar from "$lib/components/Navbar.svelte";
     import { page } from "$app/state";
     import { blur } from "svelte/transition";
 
     let { children } = $props();
-    let content = $state<HTMLDivElement>();
+    let glowTarget = $state<HTMLDivElement>();
     let glow = $state<HTMLDivElement>();
 
-    function updateGlow() {
-        if (!content || !glow) {
+    function offsetGlowTop() {
+        if (!glowTarget || !glow) {
             return;
         }
-        glow.style.top = `${content.scrollTop}px`;
+        glow.style.top = `${glowTarget.scrollTop}px`;
     }
 
     function onmousemove(e: MouseEvent) {
-        if (!content) {
+        if (!glowTarget) {
             return;
         }
-        const rect = content.getBoundingClientRect();
+
+        const rect = glowTarget.getBoundingClientRect();
         const x = e.clientX - rect.left;
         const y = e.clientY - rect.top;
-        content.style.setProperty("--glow-x", `${x}px`);
-        content.style.setProperty("--glow-y", `${y}px`);
-        updateGlow();
+
+        glowTarget.style.setProperty("--glow-x", `${x}px`);
+        glowTarget.style.setProperty("--glow-y", `${y}px`);
+        offsetGlowTop();
+
         if (x < 0 || y < 0 || x > rect.width || y > rect.height) {
-            content.style.setProperty("--glow-opacity", "0");
+            glowTarget.style.setProperty("--glow-opacity", "0");
         } else {
-            content.style.setProperty("--glow-opacity", "1");
+            glowTarget.style.setProperty("--glow-opacity", "1");
         }
     }
 </script>
@@ -41,13 +42,14 @@
     <title>vlOd's website</title>
 </svelte:head>
 
-<div class="body-flex">
+<div class="body-flex" bind:this={glowTarget} {onmousemove} onscroll={() => offsetGlowTop()}>
     <Navbar />
 
-    <div class="content-container" {onmousemove}>
+    <div class="cursor-glow" bind:this={glow}></div>
+
+    <div class="content-container">
         {#key page.route.id}
-            <div class="content" bind:this={content} onscroll={() => updateGlow()} in:blur>
-                <div class="cursor-glow" bind:this={glow}></div>
+            <div class="content" in:blur>
                 {@render children?.()}
             </div>
         {/key}
